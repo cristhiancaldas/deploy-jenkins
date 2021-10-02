@@ -22,6 +22,14 @@ public class ContacApi {
 	
 	@Autowired
 	ContactService contactService;
+
+	@RequestMapping(value="/" , method=RequestMethod.GET)
+	@ApiOperation(value = "health", response = Contact.class)
+	public String health() {
+	  	log.info("Ingresando al metodo de health");
+        return "Saludos";
+	}
+
 	@RequestMapping(value="/lstcontact" , method=RequestMethod.GET)
 	@ApiOperation(value = "Listado del contacto ", response = Contact.class)
 	public List<Contact> getContactAll() {
