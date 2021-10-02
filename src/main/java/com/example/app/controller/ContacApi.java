@@ -27,7 +27,7 @@ public class ContacApi {
 	@ApiOperation(value = "health", response = Contact.class)
 	public String health() {
 	  	log.info("Ingresando al metodo de health");
-        return "Saludos";
+        return "Metodo Health";
 	}
 
 	@RequestMapping(value="/lstcontact" , method=RequestMethod.GET)
