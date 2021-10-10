@@ -12,13 +12,13 @@ agent any
 
 stages {
 
- stage('Cloning our Git') {
+ stage("Cloning our Git") {
     steps {
           git credentialsId: 'cred-git', url: 'https://github.com/cristhiancaldas/deploy-jenkins.git'
     }
   }
 
- stage('Mvn Package'){
+ stage("Mvn Package"){
    steps{
        
         sh "${mvnCMD} clean package -Dmaven.test.skip=true"
@@ -26,7 +26,7 @@ stages {
    }
  }
 
-  stage('Building our image') {
+  stage("Building our image") {
     steps{
         script {
             dockerImage = docker.build registry + ":$BUILD_NUMBER"
@@ -34,7 +34,7 @@ stages {
     }
   }
 
-  stage('Deploy our image') {
+  stage("Deploy our image") {
     steps{
         script {
             docker.withRegistry( '', registryCredential ) {
@@ -44,7 +44,7 @@ stages {
     }
   }
 
-  stage('Cleaning up') {
+  stage("Cleaning up") {
     steps{
         sh "docker rmi $registry:$BUILD_NUMBER"
     }
