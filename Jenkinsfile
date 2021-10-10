@@ -18,8 +18,8 @@ stages {
 
  stage('Mvn Package'){
    steps{
-        def mvnHome = tool name: 'maven', type: 'maven'
-        def mvnCMD = "${mvnHome}/bin/mvn"
+        mvnHome = tool name: 'maven', type: 'maven'
+        mvnCMD = "${mvnHome}/bin/mvn"
         sh "${mvnCMD} clean package -Dmaven.test.skip=true"
        }
    }
