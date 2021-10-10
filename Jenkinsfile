@@ -20,12 +20,10 @@ stages {
 
  stage("Mvn Package"){
    steps{
-       
         sh "${mvnCMD} clean package -Dmaven.test.skip=true"
        }
    }
- }
-
+ 
   stage("Building our image") {
     steps{
         script {
@@ -49,4 +47,5 @@ stages {
         sh "docker rmi $registry:$BUILD_NUMBER"
     }
   }
+}
 }
