@@ -4,6 +4,8 @@ pipeline {
         registry = "crist/app-rest"
         registryCredential = 'cred-dockerHub'
         dockerImage = ''
+        mvnHome = tool name: 'maven', type: 'maven'
+        mvnCMD = "${mvnHome}/bin/mvn"
     }
 
 agent any
@@ -18,8 +20,7 @@ stages {
 
  stage('Mvn Package'){
    steps{
-        mvnHome = tool name: 'maven', type: 'maven'
-        mvnCMD = "${mvnHome}/bin/mvn"
+       
         sh "${mvnCMD} clean package -Dmaven.test.skip=true"
        }
    }
