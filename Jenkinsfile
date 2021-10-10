@@ -10,6 +10,10 @@ pipeline {
 
 agent any
 
+triggers {
+      pollSCM '* * * * *'
+    }
+
 stages {
 
  stage("Cloning our Git") {
@@ -32,7 +36,7 @@ stages {
     }
   }
 
-  stage("Deploy our image") {
+  stage("Push our image") {
     steps{
         script {
             docker.withRegistry( '', registryCredential ) {
