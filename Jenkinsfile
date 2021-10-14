@@ -30,7 +30,7 @@ stages {
  
   stage("Building our image") {
     steps{
-          sh "docker buildx build  -t  $registry:$BUILD_NUMBER  --platform linux/amd64,linux/arm64    ." 
+          sh "docker buildx build  $registry:$BUILD_NUMBER  --platform linux/amd64,linux/arm64   ." 
           // dockerImage = docker.build registry + ":$BUILD_NUMBER"
     }
   }
