@@ -32,7 +32,7 @@ stages {
     steps{
            //sh "docker buildx ls"
            //sh "docker buildx inspect default"
-            sh "docker buildx create --name mybuilder"
+            //sh "docker buildx create --name mybuilder"
             sh "docker buildx use mybuilder"
             //sh "docker buildx build  $registry:$BUILD_NUMBER  --platform linux/amd64,linux/arm64  ." 
             sh "docker buildx build --platform linux/arm64,linux/amd64 -t $registry:$BUILD_NUMBER . --load"
