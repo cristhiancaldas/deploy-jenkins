@@ -35,7 +35,7 @@ stages {
             //sh "docker buildx create --name mybuilder"
             sh "docker buildx use mybuilder"
             //sh "docker buildx build  $registry:$BUILD_NUMBER  --platform linux/amd64,linux/arm64  ." 
-            sh "docker buildx build  --load -t $registry:$BUILD_NUMBER --platform linux/arm64,linux/amd64   ."
+            sh "docker buildx build  -t $registry:$BUILD_NUMBER --platform linux/arm64,linux/amd64   ."
           // dockerImage = docker.build registry + ":$BUILD_NUMBER"
     }
   }
