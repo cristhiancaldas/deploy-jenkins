@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: crist/app-rest:8
+        image: crist/app-rest:latest
         ports:
           - containerPort: 8083
 ---
