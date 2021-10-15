@@ -55,9 +55,8 @@ stages {
 
   stage("Deploy in k8s"){
     steps{
-                milestone(1)
                 kubernetesDeploy(
-                    kubeconfigId: 'cred-k8s',
+                    kubeconfigId: 'cred-eks',
                     configs: 'deployment-k8s.yml',
                     enableConfigSubstitution: true
                 )
