@@ -1,5 +1,5 @@
-apiVersion: extensions/v1beta1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
   name: nodejs-app
   namespace: default
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: crist/app-rest:$BUILD_NUMBER
+        image: crist/app-rest:8
         ports:
           - containerPort: 8083
 ---
