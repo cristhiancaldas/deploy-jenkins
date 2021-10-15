@@ -42,6 +42,7 @@ stages {
             }
     }
   }
+  }
 
   // stage("Push our image") {
   //   steps{
@@ -61,6 +62,5 @@ stages {
     }
   }
 */
-
 }
 }
