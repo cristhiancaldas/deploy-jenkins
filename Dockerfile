@@ -1,5 +1,4 @@
-#FROM openjdk:11-jre
-FROM openjdk:11-jre-slim-bullseye
+FROM openjdk:11-jre
 
 WORKDIR /
 
