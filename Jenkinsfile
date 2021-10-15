@@ -44,7 +44,8 @@ stages {
     steps{
         script {
             docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
+            //dockerImage.push()
+              sh "docker buildx build  -t $registry:$BUILD_NUMBER --platform linux/arm64,linux/amd64  . --push"
             }
         }
     }
