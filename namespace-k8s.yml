@@ -27,7 +27,7 @@ metadata:
   namespace: deploy-jenkins
 subjects:
 - kind: ServiceAccount
-  name: myaccount
+  name: service-deploy
   apiGroup: ""
 - kind: User
   name: kind-kind # Name is case sensitive
