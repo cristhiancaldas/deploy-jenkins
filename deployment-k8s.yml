@@ -30,7 +30,6 @@ spec:
       labels:
         app: nodejs-app
     spec:
-      serviceAccountName: service-deploy
       containers:
       - name: nodejs-app
         image: crist/app-rest:57

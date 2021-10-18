@@ -4,12 +4,6 @@ kind: Namespace
 metadata:
   name:  deploy-jenkins
 ---
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name:  service-deploy
-  namespace: deploy-jenkins
----
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -26,9 +20,6 @@ metadata:
   name: deploy-jenkins-rolebinding
   namespace: deploy-jenkins
 subjects:
-- kind: ServiceAccount
-  name: service-deploy
-  apiGroup: ""
 - kind: User
   name: kind-kind # Name is case sensitive
   apiGroup: rbac.authorization.k8s.io
