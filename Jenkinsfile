@@ -16,7 +16,7 @@ triggers {
 
 stages {
 
-  stage("Cloning our Git") {
+ /*  stage("Cloning our Git") {
     steps {
           git credentialsId: 'cred-git', url: 'https://github.com/cristhiancaldas/deploy-jenkins.git'
     }
@@ -52,7 +52,7 @@ stages {
         sh "docker rmi $registry:$BUILD_NUMBER"
     }
   }
-
+*/
   stage("Deploy in k8s"){
     steps{
                 kubernetesDeploy(
