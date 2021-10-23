@@ -2,7 +2,7 @@ pipeline {
 
     environment {
         registry = "crist/app-rest"
-        registryCredential = 'cred-dockerHub'
+        registryCredential = 'cred-docker'
         dockerImage = ''
         mvnHome = tool name: 'maven', type: 'maven'
         mvnCMD = "${mvnHome}/bin/mvn"
@@ -16,7 +16,7 @@ triggers {
 
 stages {
 
- /*  stage("Cloning our Git") {
+  stage("Cloning our Git") {
     steps {
           git credentialsId: 'cred-git', url: 'https://github.com/cristhiancaldas/deploy-jenkins.git'
     }
@@ -52,8 +52,8 @@ stages {
         sh "docker rmi $registry:$BUILD_NUMBER"
     }
   }
-*/
-  stage("Deploy in k8s"){
+
+/*   stage("Deploy in k8s"){
     steps{
                 kubernetesDeploy(
                     kubeconfigId: 'cred-eks',
@@ -61,7 +61,7 @@ stages {
                     enableConfigSubstitution: true
                 )
     }
-  }
+  }*/
 
   }
 }
