@@ -2,7 +2,7 @@ pipeline {
 
     environment {
         registry = "crist/app-rest"
-        registryCredential = 'cred-docker'
+        registryCredential = 'cred-dockerhub'
         dockerImage = ''
         mvnHome = tool name: 'maven', type: 'maven'
         mvnCMD = "${mvnHome}/bin/mvn"
